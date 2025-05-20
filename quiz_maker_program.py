@@ -20,7 +20,7 @@ def get_filename(self) -> str:
         print("Filename cannot be empty!")
     return 'quiz_questions.txt'
 
-def get_question():
+def get_question(self) -> str:
     """Gets a question from the user with validation."""
     while True:
         question = input("Enter your question: ").strip()
@@ -28,7 +28,7 @@ def get_question():
             return question
         print("Question cannot be empty!")
 
-def get_answers():
+def get_answers(self) -> list:
     """Gets four possible answers from the user."""
     answers = []
     for label in ['A', 'B', 'C', 'D']:
@@ -40,14 +40,14 @@ def get_answers():
             print(f"Answer {label} cannot be empty!")
     return answers
 
-def get_correct_answer():
+def get_correct_answer(self) -> str:
     """Gets the correct answer from the user."""
     while True:
         correct = input("Enter the correct answer (A/B/C/D): ").upper().strip()
         if correct in ['A', 'B', 'C', 'D']:
             return correct
         print("Invalid input! Please enter A, B, C, or D.")
-
+            
 def save_to_file(filename, question, answers, correct_answer):
     """Saves the question and answers to a file."""
     with open(filename, "a") as file:
