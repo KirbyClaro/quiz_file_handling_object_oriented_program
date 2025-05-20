@@ -59,26 +59,25 @@ def save_to_file(self, question: str, answers: list, correct_answer: str):
         file.write(f"CORRECT:{correct_answer}\n")
         file.write("---\n")
 
-def main():
+def start_quiz_creation(self):
+    """Manages the process of adding questions to the quiz."""
     print("~~~~~~~~Welcome to Quiz Creator!~~~~~~~~")
     print("Press Control + C to quit.")
-    
-    # Get filename
-    filename = get_filename()
-    print(f"Questions will be saved to: {filename}")
-    
+
     while True:
-        data = {
-            "question": get_question(),
-            "answers": get_answers(),
-            "correct": get_correct_answer()
-        }
-        save_to_file(filename, data["question"], data["answers"], data["correct"])
+        question = self.get_question()
+        answers = self.get_answers()
+        correct_answer = self.get_correct_answer()
+
+        self.save_to_file(question, answers, correct_answer)
         print("Question saved successfully!")
-        
+
         cont = input("\nWould you like to add another question? (yes/no): ").lower()
         if cont != 'yes':
             break
+
+        print("\nThank you for using Quiz Creator!")
+        print("\nI hope you liked it! :D")
         
     print("\nThank you for using Quiz Creator!")
     
