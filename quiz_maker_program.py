@@ -78,10 +78,7 @@ def start_quiz_creation(self):
 
         print("\nThank you for using Quiz Creator!")
         print("\nI hope you liked it! :D")
-        
-    print("\nThank you for using Quiz Creator!")
-    
-    print("\n I hoped you liked it! :D")
 
 if __name__ == "__main__":
-    main()
+    quiz_manager = QuizManager()
+    quiz_manager.start_quiz_creation()
