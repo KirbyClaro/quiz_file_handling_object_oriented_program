@@ -48,9 +48,9 @@ def get_correct_answer(self) -> str:
             return correct
         print("Invalid input! Please enter A, B, C, or D.")
             
-def save_to_file(filename, question, answers, correct_answer):
+def save_to_file(self, question: str, answers: list, correct_answer: str):
     """Saves the question and answers to a file."""
-    with open(filename, "a") as file:
+    with open(self.filename, "a") as file:
         file.write(f"QUESTION:{question}\n")
         file.write(f"A:{answers[0]}\n")
         file.write(f"B:{answers[1]}\n")
