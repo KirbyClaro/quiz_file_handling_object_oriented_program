@@ -4,7 +4,12 @@
 #to a text file. Ask another question until 
 #the user chose to exit.
 
-def get_filename():
+class QuizManager:
+    def __init__(self):
+        self.filename = self.get_filename()
+        print(f"Questions will be saved to: {self.filename}")
+        
+def get_filename(self) -> str:
     """Gets the filename from the user with validation."""
     while True:
         filename = input("Enter the filename to save questions (default: quiz_questions.txt): ").strip()
@@ -13,7 +18,7 @@ def get_filename():
                 filename += '.txt'
             return filename
         print("Filename cannot be empty!")
-        return 'quiz_questions.txt'
+    return 'quiz_questions.txt'
 
 def get_question():
     """Gets a question from the user with validation."""
