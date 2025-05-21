@@ -54,15 +54,16 @@ class QuizGame:
         return questions
 
 #display the questions
-def display_question(question_data):
-    print("\n" + "="*50)
-    print(f"Question:")
-    print(question_data["question"])
-    print(f"A. {question_data['A']}")
-    print(f"B. {question_data['B']}")
-    print(f"C. {question_data['C']}")
-    print(f"D. {question_data['D']}")
-    print("="*50)
+    def display_question(self, question_data: dict):
+        """Displays a quiz question with answer choices."""
+        print("\n" + "="*50)
+        print(f"Question:")
+        print(question_data["question"])
+        print(f"A. {question_data['A']}")
+        print(f"B. {question_data['B']}")
+        print(f"C. {question_data['C']}")
+        print(f"D. {question_data['D']}")
+        print("="*50)
     
 #accept and check user answer
 def get_user_answer():
