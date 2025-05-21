@@ -6,15 +6,22 @@
 import random
 
 #ask user for file name
-def get_filename():
-    while True:
-        filename = input("Enter the filename to load question:").strip()
-        if filename:
-            if not filename.endswith(".txt"):
-                filename  += ".txt"
-            return filename
-        print("Filename cannot be empty!")
-        return
+class QuizGame:
+
+    def __init__(self):
+        """Initialize the quiz game with a filename."""
+        self.filename = self.get_filename()
+        self.questions = self.load_questions(self.filename)
+
+    def get_filename(self) -> str:
+        while True:
+            filename = input("Enter the filename to load questions: ").strip()
+            if filename:
+                if not filename.endswith(".txt"):
+                    filename += ".txt"
+                return filename
+            print("Filename cannot be empty!")
+
 #access the file and read it
 def load_questions(filename):
     questions = []
