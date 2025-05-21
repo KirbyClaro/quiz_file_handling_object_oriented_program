@@ -66,15 +66,17 @@ class QuizGame:
         print("="*50)
     
 #accept and check user answer
-def get_user_answer():
-    while True:
-        answer = input("Your answer (A/B/C/D): ").upper().strip()
-        if answer in ['A', 'B', 'C', 'D']:
-            return answer
-        print("Invalid input. Please enter A, B, C, or D.")
+    def get_user_answer(self) -> str:
+        """Gets the user's answer and ensures it's valid."""
+        while True:
+            answer = input("Your answer (A/B/C/D): ").upper().strip()
+            if answer in ['A', 'B', 'C', 'D']:
+                return answer
+            print("Invalid input. Please enter A, B, C, or D.")
 
-def check_answer(user_answer, correct_answer):
-    return user_answer == correct_answer
+    def check_answer(self, user_answer: str, correct_answer: str) -> bool:
+        """Checks if the user's answer is correct."""
+        return user_answer == correct_answer
 
 #run quiz and score
 def run_quiz(questions):
